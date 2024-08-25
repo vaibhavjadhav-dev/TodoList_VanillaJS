@@ -18,7 +18,6 @@
         </div>
         <div class="col-md-6 d-flex justify-content-end">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#todoModal" data-bs-whatever="@mdo">Add Todo</button>
-            <!-- <button type="button" class="btn btn-primary">Add Todo</button> -->
         </div>
     </div>
 
@@ -31,23 +30,23 @@
               <button t ype="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <form>
+              <form  id="todoForm">
                 <div class="mb-3">
-                  <label for="recipient-name" class="col-form-label">Todo Name:</label>
-                  <input type="text" class="form-control" id="todoname">
+                  <label for="todoname" class="col-form-label">Todo Name:</label>
+                  <input type="text" class="form-control" id="todoname" required>
                 </div>
                 <div class="mb-3">
-                  <label for="message-text" class="col-form-label">Description:</label>
-                  <textarea class="form-control" id="descriptiontext"></textarea>
+                  <label for="descriptiontext" class="col-form-label">Description:</label>
+                  <textarea class="form-control" id="descriptiontext" required></textarea>
                 </div>
                 <button type="reset" class="btn btn-warning" id="clearFieldsButton">Clear</button>
-
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary" id="saveTodoButton">Save Todo</button>
+                </div>
+          
               </form>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="saveTodoButton">Save Todo</button>
-              </div>
-        
+         
             </div>
          
           </div>

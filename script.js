@@ -1,30 +1,23 @@
-document.getElementById('saveTodoButton')
-    .addEventListener('click', function () {
-        //get input value
-        var todoName = document.getElementById('todoname').value;
-        var todoDescription = document.getElementById('descriptiontext').value;
+document.getElementById('todoForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent form from submitting normally
 
-        //create new todo list item for the todo
-        var todoItem = document.createElement('li');
-        todoItem.classList.add('list-group-item');
-        todoItem.innerHTML = `<strong>${todoName}</strong>: ${todoDescription}`;
+    // Get input values
+    var todoName = document.getElementById('todoname').value.trim();
+    var todoDescription = document.getElementById('descriptiontext').value.trim();
 
+    // Create new todo list item for the todo
+    var todoItem = document.createElement('li');
+    todoItem.classList.add('list-group-item');
+    todoItem.innerHTML = `<strong>${todoName}</strong>: ${todoDescription}`;
 
-        //append new todo item to list
-        document.getElementById('todoList').appendChild(todoItem)
+    // Append new todo item to list
+    document.getElementById('todoList').appendChild(todoItem);
 
-        //clear input field
-        document.getElementById('todoname').value="";
-        document.getElementById('descriptiontext').value="";
+    // Clear input fields
+    document.getElementById('todoname').value = "";
+    document.getElementById('descriptiontext').value = "";
 
-        // Hide the modal
-        var modal = bootstrap.Modal.getInstance(document.getElementById('todoModal'));
-        modal.hide();
-
-        //clearing input fiels
-        // document.getElementById('clearFieldsButton')
-        //     .addEventListener('click', function () {
-        //         document.getElementById('todoname').value="";
-        //         document.getElementById('descriptiontext').value="";
-        //     });
-    })
+    // Hide the modal
+    var modal = bootstrap.Modal.getInstance(document.getElementById('todoModal'));
+    modal.hide();
+});
